@@ -3,9 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Showmitro ICT</title>
+    <title>Shikkha 24 BD</title>
 
-    <link rel="shortcut icon" href="./frontend/img/logoP.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="./frontend/img/logos/favicon.png" type="image/x-icon">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <!-- font-family: "Nunito", sans-serif; -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Protest+Riot&display=swap" rel="stylesheet">
+    <!-- font-family: "Protest Riot", sans-serif; -->
 
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -19,35 +27,32 @@
   
 
 <style>
-@media screen and (max-width:480px) {
-.carousel-item{ height: 45vh; }
-}
-@media screen and (min-width:767px) {
-.carousel-item{ height: 85vh; }
+*{
+  font-family: "Nunito", sans-serif;
 }
 :root{
-  --primary-color: #bb34b6;
-  --primary-color2: #932690;
+  --primary-color: #0171AB;
+  --primary-color2: #05406F;
 }
 .btn-primary2 {
 
     --bs-btn-color: #fff;
-    --bs-btn-bg: #bb34b6;
-    --bs-btn-border-color: #bb34b6;
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
 
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #932690;
-    --bs-btn-hover-border-color: #932690;
+    --bs-btn-hover-bg: var(--primary-color2);
+    --bs-btn-hover-border-color: var(--primary-color2);
     
     --bs-btn-focus-shadow-rgb: 49,132,253;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #932690;
-    --bs-btn-active-border-color: #932690;
+    --bs-btn-active-bg: var(--primary-color2);
+    --bs-btn-active-border-color: var(--primary-color2);
 
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #932690;
-    --bs-btn-disabled-border-color: #932690;
+    --bs-btn-disabled-bg: var(--primary-color2);
+    --bs-btn-disabled-border-color: var(--primary-color2);
 
     font-size: 1.2rem;
     padding: .5rem 2rem;
@@ -78,28 +83,6 @@
     border-bottom: 2px solid var(--primary-color);
     transition: .2s;
 }
-.carousel-indicators [data-bs-target] {
-    box-sizing: content-box;
-    flex: 0 1 auto;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    margin-right: 3px;
-    margin-left: 3px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: var(--primary-color);
-    background-clip: padding-box;
-    border: 0;
-    border-top: 0px solid transparent;
-    border-bottom: 0px solid transparent;
-    opacity: .5;
-    transition: opacity .6s ease;
-    border-radius: 100%;
-}
-.carousel-indicators .active {
-    opacity: 1;
-}
 .card{
   cursor: pointer;
 }
@@ -119,23 +102,19 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="./frontend/img/logo.png" alt="Logo" class="" >
-
-          <!-- Navbar -->
-
+        <a class="navbar-brand" href="">
+          <img src="./frontend/img/logos/logo.jpg" alt="Logo" class="" >
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" >Home</a></li>
-            <li class="nav-item"><a class="nav-link" >Courses</a></li>
-            <li class="nav-item"><a class="nav-link" >Free Test</a></li>
-            <li class="nav-item"><a class="nav-link" >Books</a></li>
-            <li class="nav-item"><a class="nav-link" >Blogs</a></li>
-            <li class="nav-item"><a class="nav-link" >Galleries</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="#books">Books</a></li>
+            <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#galleries">Galleries</a></li>
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
@@ -153,11 +132,74 @@
       </div>
     </nav>
 
+  <style>
+      .notices-container { overflow: hidden; }
+      .notices-list { white-space: nowrap; animation: scroll 25s linear infinite; }
+      @keyframes scroll {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+      }
+  </style>
+  <section class="py-2" style="background: var(--primary-color2);">
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-1 col-md-2 col-3 bg-white fs-5 text-center" style="color:var(--primary-color);">Notice :</div>
+              <div class="col-xl-11 col-md-10 col-9" onmouseover="stopScroll()" onmouseout="startScroll()">
+                  <div class="notices-container">
+                      <div class="notices-list">
+                          
+                              <a  class="text-decoration-none text-white fs-5 fw-bold">
+                                  *** Aj amader chuti o vai, aj amader chuti. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  *** Megher kole rod eseche, badol geche tuti. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  *** Amar sonar bangla ami tomay valobashi. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              </a>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <script>
+      var marqueeElement = document.querySelector('.notices-list');
+      function stopScroll() { marqueeElement.style.animationPlayState = 'paused'; }
+      function startScroll() { marqueeElement.style.animationPlayState = 'running'; }
+  </script>
+
+    <!-- <style>
+    @media screen and (max-width:480px) {
+    .carousel-item{ height: 45vh; }
+    }
+    @media screen and (min-width:767px) {
+    .carousel-item{ height: 85vh; }
+    }
+    .carousel-indicators [data-bs-target] {
+        box-sizing: content-box;
+        flex: 0 1 auto;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        margin-right: 3px;
+        margin-left: 3px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: var(--primary-color);
+        background-clip: padding-box;
+        border: 0;
+        border-top: 0px solid transparent;
+        border-bottom: 0px solid transparent;
+        opacity: .5;
+        transition: opacity .6s ease;
+        border-radius: 100%;
+    }
+    .carousel-indicators .active {
+        opacity: 1;
+    }
+    </style>
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="4000">
@@ -166,9 +208,6 @@
         <div class="carousel-item" data-bs-interval="4000">
           <img src="./frontend/img/banner/Red Black Dark Background Finance Niche  Youtube Thumbnail.png" class="d-block w-100 h-100" alt="...">
         </div>
-        <!-- <div class="carousel-item">
-          <img src="./frontend/img/banner/oYek4YOLhCGPaze7UecXTxLhYK2qWYdv.jpg" class="d-block w-100" alt="...">
-        </div> -->
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -178,9 +217,20 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
+    </div> -->
 
-    <section style="background: #F4F4F4;">
+    <section id="banner" style="background: linear-gradient(to bottom,var(--primary-color2),var(--primary-color));">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="./frontend/img/banner/Homepage_1stFold_Banner.webp" alt="" class="img-fluid">
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="" class="" style="background: #F4F4F4;">
       <div class="container py-5">
         <div class="row justify-content-center">
 
@@ -229,13 +279,45 @@
       </div>
     </section>
 
-    <section>
+    <section id="courses" class="py-5">
       <div class="container py-5">
         <div class="row justify-content-center">
           <div class="col-12 fs-1 fw-bold pb-2 text-center">
             Best <span style="color: var(--primary-color);">Courses</span>
           </div>
           <hr>
+          <style>
+            .ownButtonPurple {
+                border-radius: 26px;
+                color: #fff;
+                text-align: center;
+                padding: 8px 20px;
+                border: none;
+                line-height: 24px;
+                font-size: 18px;
+                box-shadow: 0px 5px 15px -5px rgb(0 0 0 / 78%);
+                background: linear-gradient(to right,#BF00FF,#562270);
+            }
+            .ownButtonPurple:hover{
+              color: white;
+                background: linear-gradient(to right, #562270,#BF00FF);
+            }
+            .ownButtonOrange {
+                border-radius: 26px;
+                color: #fff;
+                text-align: center;
+                padding: 8px 20px;
+                border: none;
+                line-height: 24px;
+                font-size: 18px;
+                box-shadow: 0px 5px 15px -5px rgb(0 0 0 / 78%);
+                background: transparent linear-gradient(110deg, #EF512E 0%, #DE0655 100%) 0% 0% no-repeat padding-box;
+            }
+            .ownButtonOrange:hover{
+              color: white;
+                background: transparent linear-gradient(110deg, #DE0655 0%, #EF512E 100%) 0% 0% no-repeat padding-box;
+            }
+          </style>
 
           <div class="col-md-4 col-11 pb-4" data-aos="zoom-in">
             <a  class="text-decoration-none">
@@ -243,6 +325,15 @@
                 <img src="./frontend/img/course/hsc1.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center fs-4">HSC 1st Year</h5>
+                  <ul>
+                    <li>fghhg gfhgh hghgfv</li>
+                    <li>fghhg gfhgh hghgfv</li>
+                    <li>fghhg gfhgh hghgfv</li>
+                  </ul>
+                  <div class="text-center">
+                    <a  class="btn ownButtonOrange" data-bs-toggle="modal" data-bs-target="#Login">Enroll Now</a>
+                    <a  class="btn ownButtonPurple mt-xl-0 mt-2" >Details/Routine</a>
+                  </div>
                 </div>
               </div>
             </a>
@@ -253,6 +344,15 @@
                 <img src="./frontend/img/course/hsc2.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center fs-4">HSC 2nd Year</h5>
+                  <ul>
+                    <li>fghhg gfhgh hghgfv</li>
+                    <li>fghhg gfhgh hghgfv</li>
+                    <li>fghhg gfhgh hghgfv</li>
+                  </ul>
+                  <div class="text-center">
+                    <a  class="btn ownButtonOrange" data-bs-toggle="modal" data-bs-target="#Login">Enroll Now</a>
+                    <a  class="btn ownButtonPurple mt-xl-0 mt-2" >Details/Routine</a>
+                  </div>
                 </div>
               </div>
             </a>
@@ -263,6 +363,15 @@
                 <img src="./frontend/img/course/varsity.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center fs-4">Varsity Admission</h5>
+                  <ul>
+                    <li>fghhg gfhgh hghgfv</li>
+                    <li>fghhg gfhgh hghgfv</li>
+                    <li>fghhg gfhgh hghgfv</li>
+                  </ul>
+                  <div class="text-center">
+                    <a class="btn ownButtonOrange" data-bs-toggle="modal" data-bs-target="#Login">Enroll Now</a>
+                    <a  class="btn ownButtonPurple mt-xl-0 mt-2" >Details/Routine</a>
+                  </div>
                 </div>
               </div>
             </a>
@@ -277,11 +386,11 @@
     </section>
 
 <!--     <section style="background: #F4F4F4;"> -->
-    <section style="background: black; color:white;">
+    <section id="" class="py-5" style="background: black; color:white;">
       <div class="container py-5">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-7 pb-md-0 pb-5" data-aos="fade-down">
-            <iframe class="rounded" width="100%" height="350" src="https://www.youtube.com/embed/yjpaflzrVM8?si=bBG3AXTh5VrBFuKE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="rounded" width="100%" height="350" src="https://www.youtube.com/embed/yfRcNO7ppm4?si=LM24570AzjkA9BzY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           <div class="col-md-5" data-aos="fade-up">
             <h1 class="fs-1 text-center">It is a long established</h1>
@@ -292,7 +401,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="books" class="py-5">
       <div class="container py-5">
         <div class="row justify-content-center">
           <div class="col-12 fs-1 fw-bold pb-2 text-center">
@@ -303,7 +412,7 @@
           <div class="col-lg-3 col-md-4 col-11 pb-4" data-aos="zoom-in">
             <a  class="text-decoration-none">
               <div class="card">
-                <img src="./frontend/img/book/one.jpg" class="card-img-top" alt="...">
+                <img src="https://images.ctfassets.net/usf1vwtuqyxm/6VuPUG4wPtmg3xvqwm6ZSn/2465365bae53ac09562f7bcea0b75cb3/English_Harry_Potter_2_Epub_9781781100226.jpg?w=914&q=70&fm=jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center fs-4">Card title</h5>
                   <h5 class="card-title text-center fs-4 fw-bold">555 &#2547;</h5>
@@ -314,7 +423,7 @@
           <div class="col-lg-3 col-md-4 col-11 pb-4" data-aos="zoom-in">
             <a  class="text-decoration-none">
               <div class="card">
-                <img src="./frontend/img/book/two.jpg" class="card-img-top" alt="...">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHfme7DyM80s5iDgwXd6VRPSdgX5mL_OaWUFAf0uf4obL2taUgylnbMiZ2rOLIiubSipk&usqp=CAU" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center fs-4">Card title</h5>
                   <h5 class="card-title text-center fs-4 fw-bold">555 &#2547;</h5>
@@ -325,7 +434,7 @@
           <div class="col-lg-3 col-md-4 col-11 pb-4" data-aos="zoom-in">
             <a  class="text-decoration-none">
               <div class="card">
-                <img src="./frontend/img/book/three.jpg" class="card-img-top" alt="...">
+                <img src="https://bukovero.com/wp-content/uploads/2016/07/Harry_Potter_and_the_Cursed_Child_Special_Rehearsal_Edition_Book_Cover.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title text-center fs-4">Card title</h5>
                   <h5 class="card-title text-center fs-4 fw-bold">555 &#2547;</h5>
@@ -342,7 +451,7 @@
       </div>
     </section>
 
-    <section style="background: #F4F4F4;">
+    <section id="testimonials" class="py-5" style="background: #F4F4F4;">
       <div class="container py-5">
         <div class="row justify-content-center">
           <div class="col-12 fs-1 fw-bold pb-2 text-center">
@@ -357,7 +466,7 @@
                   <img src="./frontend/img/testimonial/User.png" alt="" class="rounded-circle" width="100px" height="100px">
                 </div>
                 <div>
-                  <h3>Jon Doe Datta</h3>
+                  <h3>Jon Doe</h3>
                   <p class="fs-4">Student</p>
                 </div>
               </div>
@@ -374,7 +483,7 @@
                   <img src="./frontend/img/testimonial/User.png" alt="" class="rounded-circle" width="100px" height="100px">
                 </div>
                 <div>
-                  <h3>Jon Doe Datta</h3>
+                  <h3>Jon Doe</h3>
                   <p class="fs-4">Student</p>
                 </div>
               </div>
@@ -391,7 +500,7 @@
                   <img src="./frontend/img/testimonial/User.png" alt="" class="rounded-circle" width="100px" height="100px">
                 </div>
                 <div>
-                  <h3>Jon Doe Datta</h3>
+                  <h3>Jon Doe</h3>
                   <p class="fs-4">Student</p>
                 </div>
               </div>
@@ -410,7 +519,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="galleries" class="py-5">
       <div class="container py-5">
         <div class="row justify-content-center">
           <div class="col-12 fs-1 fw-bold pb-2 text-center">
@@ -418,38 +527,45 @@
           </div>
           <hr>
 
-          <div class="col-lg-2 col-md-4 col-6 pb-3" data-aos="zoom-in">
+          <div class="col-lg-2 col-md-4 col-6 pb-3">
             <a href="#" data-bs-toggle="modal" data-bs-target="#Gallery">
               <div class="card p-2">
-                <img src="./frontend/img/student/376228689_699099635572072_7907651214288273862_n.jpg" alt="" class="img-fluid">
+                <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" alt="" class="img-fluid">
               </div>
             </a>
           </div>
-          <div class="col-lg-2 col-md-4 col-6 pb-3" data-aos="zoom-in">
+          <div class="col-lg-2 col-md-4 col-6 pb-3">
             <a href="#" data-bs-toggle="modal" data-bs-target="#Gallery">
               <div class="card p-2">
-                <img src="./frontend/img/student/377435096_699099745572061_396769996913309484_n.jpg" alt="" class="img-fluid">
+                <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" alt="" class="img-fluid">
               </div>
             </a>
           </div>
-          <div class="col-lg-2 col-md-4 col-6 pb-3" data-aos="zoom-in">
+          <div class="col-lg-2 col-md-4 col-6 pb-3">
             <a href="#" data-bs-toggle="modal" data-bs-target="#Gallery">
               <div class="card p-2">
-                <img src="./frontend/img/student/377898239_699099668905402_8348576820350830044_n.jpg" alt="" class="img-fluid">
+                <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" alt="" class="img-fluid">
               </div>
             </a>
           </div>
-          <div class="col-lg-2 col-md-4 col-6 pb-3" data-aos="zoom-in">
+          <div class="col-lg-2 col-md-4 col-6 pb-3">
             <a href="#" data-bs-toggle="modal" data-bs-target="#Gallery">
               <div class="card p-2">
-                <img src="./frontend/img/student/421172924_774704218011613_4799209759086120660_n.jpg" alt="" class="img-fluid">
+                <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" alt="" class="img-fluid">
               </div>
             </a>
           </div>
-          <div class="col-lg-2 col-md-4 col-6 pb-3" data-aos="zoom-in">
+          <div class="col-lg-2 col-md-4 col-6 pb-3">
             <a href="#" data-bs-toggle="modal" data-bs-target="#Gallery">
               <div class="card p-2">
-                <img src="./frontend/img/student/396717804_728850959263606_4739392562396528679_n.jpg" alt="" class="img-fluid">
+                <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" alt="" class="img-fluid">
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 pb-3">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Gallery">
+              <div class="card p-2">
+                <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" alt="" class="img-fluid">
               </div>
             </a>
           </div>
@@ -463,7 +579,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
-                  <img src="./frontend/img/student/376228689_699099635572072_7907651214288273862_n.jpg" alt="" class="img-fluid">
+                  <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" alt="" class="img-fluid">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -480,25 +596,25 @@
       </div>
     </section>
 
-    <footer>
+    <footer class="bg-body-tertiary">
       <div class="container">
         <div class="row justify-content-center">
 
           <div class="col-md-4 text-md-start text-center">
             <div class="py-4">
-              <a ><img src="./frontend/img/logo.png" alt=""></a>
+              <a href="#"><img src="./frontend/img/logos/logo.jpg" alt=""></a>
             </div>
             <div>
               <p class="fw-bold">Office address:</p>
               <p>
                 <!-- <i class="bi bi-pin-map-fill pe-2"></i> -->
                 <i class="bi bi-geo-alt-fill pe-2"></i>
-                PTI Mor, Miya Para, Khulna.
+                Shib Bari Mor, Khulna.
               </p>
               <p>
                 <!-- <i class="bi bi-telephone-fill pe-2"></i>  -->
                 <i class="bi bi-telephone-outbound-fill pe-2"></i>
-                01735 851 850
+                01632109022
               </p>
             </div>
           </div>
@@ -507,27 +623,18 @@
               <h4 class="pt-4">Useful Links:</h4>
               <ul>
                 <li><a class="text-decoration-none">Courses</a></li>
-                <li><a class="text-decoration-none">Free Tests</a></li>
                 <li><a class="text-decoration-none">Books</a></li>
-                <li><a class="text-decoration-none">Blogs</a></li>
+                <li><a class="text-decoration-none">Testimonials</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md-4 text-center">
             <div>
               <h4 class="pt-4">Keep up with us at:</h4>
-              <p class="fw-bold pt-3">Academic:</p>
               <hr class="my-0">
               <div>
-                <a href="https://www.youtube.com/@chottosir1654" target="_blank" class="text-decoration-none fs-1 pe-3 text-danger social"><i class="bi bi-youtube"></i></a>
-                <a href="https://www.facebook.com/ICTShowmitro" target="_blank" class="text-decoration-none fs-1 pe-3 text-primary social"><i class="bi bi-facebook"></i></a>
-              </div>
-              <p class="fw-bold pt-3">Personal:</p>
-              <hr class="my-0">
-              <div>
-                <a href="https://www.youtube.com/@showmitro" target="_blank" class="text-decoration-none fs-1 pe-3 text-danger social"><i class="bi bi-youtube"></i></a>
-                <a href="https://www.facebook.com/Showmitrofb" target="_blank" class="text-decoration-none fs-1 pe-3 text-primary social"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/showmitrogharami/?igsh=NDFkam9xb2ptZHU1" target="_blank" class="text-decoration-none fs-1 pe-3 text-danger social"><i class="bi bi-instagram"></i></a>
+                <a  target="_blank" class="text-decoration-none fs-1 pe-3 text-danger social"><i class="bi bi-youtube"></i></a>
+                <a  target="_blank" class="text-decoration-none fs-1 pe-3 text-primary social"><i class="bi bi-facebook"></i></a>
               </div>
             </div>
           </div>
@@ -541,6 +648,20 @@
         </div>
       </div>
     </footer>
+
+    <style>
+      #scrollToTop{ scroll-behavior: smooth; }
+    </style>
+    <a href="#" id="scrollToTop" style="position:fixed;right:10px;bottom:10px; color: var(--primary-color);"><i class="bi bi-arrow-up-circle-fill fs-1"></i></a>
+    <script>
+      function scrollValue() {
+          var scrollToTop = document.getElementById('scrollToTop');
+          var scroll = window.scrollY;
+          if (scroll < 200) { scrollToTop.style.display = 'none'; } 
+          else { scrollToTop.style.display = 'block';}
+      }
+      window.addEventListener('scroll', scrollValue);
+    </script>
 
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
